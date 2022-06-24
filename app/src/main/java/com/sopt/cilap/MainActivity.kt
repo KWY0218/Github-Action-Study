@@ -9,6 +9,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val Abc = mutableListOf<String>()
+        val GetLoadData = mutableListOf<String>()
 
         Log.d("sdfjk", "adskfjhdsf")
         Log.d("sdalfk", "dslfjl")
