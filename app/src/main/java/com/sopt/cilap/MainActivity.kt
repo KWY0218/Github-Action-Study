@@ -10,8 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.d("sdfjk", "adskfjhdsf")
+            Log.d("sdfjk", "adskfjhdsf")
         Log.d("sdalfk", "dslfjl")
+        
+        val Abc = mutableListOf<String>()
+
     }
 
     fun getHigh() {
