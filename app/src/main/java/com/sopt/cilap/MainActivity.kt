@@ -14,6 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         Log.d("sdfjk", "adskfjhdsf")
         Log.d("sdalfk", "dslfjl")
+        Log.d("sdalfk", "dslfjl")
+        Log.d("sdalfk", "dslfjl")
+        Log.d("sdalfk", "dslfjl")
     }
 
     fun getHigh() {
