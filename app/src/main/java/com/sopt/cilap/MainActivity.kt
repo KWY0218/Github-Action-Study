@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
         val GetLoadData = mutableListOf<String>()
 
         Log.d("미안하다", "이거보여주려고 어그로")
-
-        Log.d("sdfjk", "adskfjhdsf")
         Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
