@@ -36,7 +36,7 @@ jobs:
     - uses: MeilCli/slack-upload-file@v3
       with:
         slack_token: ${{ secrets.SLACK_TOKEN }}
-        channels: ${{ secrets.SLACK_CHANNEL }}
+        channel_id: ${{ secrets.SLACK_CHANNEL }}
         initial_comment: 'APK UPLOAD'
         file_type: 'apk'
         file_name: 'test.apk'
