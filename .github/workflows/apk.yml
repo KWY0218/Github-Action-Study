@@ -1,0 +1,21 @@
+name: debug apk
+on:
+  push:
+    branches:
+      - release
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Build debug APK
+      # debug apk 생성
+       run: ./gradlew assembleDebug
+
+    - name: Upload APK
+      # 지정된 path에 있는 파일을 업로드할 수 있다
+       uses: actions/upload-artifact@v3
+       with:
+           name: app
+           path: app/build/outputs/apk/debug/
