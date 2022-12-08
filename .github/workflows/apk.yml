@@ -21,23 +21,24 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: apk-artifact
-        path: ./*
+        path: ./app/build/outputs/apk/debug/app-debug.apk
 
-#     - uses: 8398a7/action-slack@v3
-#       with:
-#         status: ${{ job.status }}
-#         fields: workflow,job,commit,repo,author,took,ref
-#         author_name: KWY
+    - uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: workflow,job,commit,repo,author,took,ref
+        author_name: KWY
 
-#       env:
-#         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-#       if: always() # Pick up events even if the job fails or is canceled.
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+      if: always() # Pick up events even if the job fails or is canceled.
       
-#     - uses: MeilCli/slack-upload-file@v3
-#       with:
-#         slack_token: ${{ secrets.SLACK_TOKEN }}
-#         initial_comment: 'APK UPLOAD'
-#         file_type: 'apk'
-#         file_name: 'apk upload'
-#         file_path: 'docs/*.txt'
+    - uses: MeilCli/slack-upload-file@v3
+      with:
+        slack_token: ${{ secrets.SLACK_TOKEN }}
+        channels: ${{ secrets.SLACK_CHANNEL }}
+        initial_comment: 'APK UPLOAD'
+        file_type: 'apk'
+        file_name: 'test.apk'
+        file_path: './app/build/outputs/apk/debug/app-debug.apk'
         
