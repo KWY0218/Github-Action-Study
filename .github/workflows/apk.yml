@@ -22,3 +22,14 @@ jobs:
       with:
         name: app
         path: app/build/outputs/apk/debug/
+
+    - uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        # selectable (default: repo,message)
+        fields: workflow,job,commit,repo,author,took,ref
+        author_name: KWY
+
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+      if: always() # Pick up events even if the job fails or is canceled.
