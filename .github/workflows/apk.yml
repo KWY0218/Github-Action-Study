@@ -29,9 +29,6 @@ jobs:
 #         status: ${{ job.status }}
 #         fields: workflow,job,commit,repo,author,took,ref
 #         author_name: KWY
-
-#       env:
-#         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
       
     - uses: MeilCli/slack-upload-file@v3
       with:
