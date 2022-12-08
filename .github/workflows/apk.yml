@@ -16,28 +16,28 @@ jobs:
       # debug apk 생성
       run: ./gradlew assembleDebug
 
-    - name: Upload APK
-      # 지정된 path에 있는 파일을 업로드할 수 있다
-      uses: actions/upload-artifact@v3
-      with:
-        name: apk-artifact
-        path: ./app/build/outputs/apk/debug/app-debug.apk
+#     - name: Upload APK
+#       # 지정된 path에 있는 파일을 업로드할 수 있다
+#       uses: actions/upload-artifact@v3
+#       with:
+#         name: apk-artifact
+#         path: ./app/build/outputs/apk/debug/app-debug.apk
 
-    - uses: 8398a7/action-slack@v3
-      with:
-        status: ${{ job.status }}
-        fields: workflow,job,commit,repo,author,took,ref
-        author_name: KWY
+#     - uses: 8398a7/action-slack@v3
+#       with:
+#         status: ${{ job.status }}
+#         fields: workflow,job,commit,repo,author,took,ref
+#         author_name: KWY
 
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-      if: always() # Pick up events even if the job fails or is canceled.
+#       env:
+#         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+#       if: always() # Pick up events even if the job fails or is canceled.
       
     - uses: MeilCli/slack-upload-file@v2
       with:
         slack_token: ${{ secrets.SLACK_TOKEN }}
         channels: ${{ secrets.SLACK_CHANNEL }}
-        initial_comment: 'APK UPLOAD'
+        initial_comment: '띵덩~ APK~'
         file_type: 'apk'
         file_name: 'test.apk'
         file_path: './app/build/outputs/apk/debug/app-debug.apk'
