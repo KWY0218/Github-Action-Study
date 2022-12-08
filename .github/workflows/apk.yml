@@ -33,10 +33,10 @@ jobs:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
       if: always() # Pick up events even if the job fails or is canceled.
       
-    - uses: MeilCli/slack-upload-file@v3
+    - uses: MeilCli/slack-upload-file@v2
       with:
         slack_token: ${{ secrets.SLACK_TOKEN }}
-        channel_id: ${{ secrets.SLACK_CHANNEL }}
+        channels: ${{ secrets.SLACK_CHANNEL }}
         initial_comment: 'APK UPLOAD'
         file_type: 'apk'
         file_name: 'test.apk'
