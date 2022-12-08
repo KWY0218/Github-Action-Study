@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
-        Log.d("sdfjk", "adskfjhdsf")
-        Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
         Log.d("sdfjk", "adskfjhdsf")
