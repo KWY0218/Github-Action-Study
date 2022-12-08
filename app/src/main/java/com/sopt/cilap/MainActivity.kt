@@ -11,8 +11,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val Abc = mutableListOf<String>()
         val GetLoadData = mutableListOf<String>()
-        
-        Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
         Log.d("sdalfk", "dslfjl")
