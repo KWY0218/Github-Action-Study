@@ -46,5 +46,4 @@ jobs:
           initial_comment: '띵덩~ APK~'
           file_type: 'apk'
           file_name: 'test.apk'
-          file_path: './app/build/outputs/apk/debug/app-debug.apk'
-
+          file_path: './app/build/outputs/apk/release/app-release.apk'
