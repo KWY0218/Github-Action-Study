@@ -3,9 +3,19 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id "org.jlleitschuh.gradle.ktlint" version "10.3.0"
 }
-
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 android {
     compileSdk 32
+
+    signingConfigs {
+        release {
+            storeFile file(properties["STORE_FILE"])
+            keyAlias properties["KEY_ALIAS"]
+            keyPassword properties["KEY_PASSWORD"]
+            storePassword properties["STORE_PASSWORD"]
+        }
+    }
 
     defaultConfig {
         applicationId "com.sopt.cilap"
@@ -21,6 +31,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
