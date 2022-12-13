@@ -12,7 +12,7 @@ jobs:
 
       - name: Create Local Properties
         run: touch local.properties
-zd
+      
       - name: Access Local Properties
         env:
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
