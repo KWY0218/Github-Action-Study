@@ -19,7 +19,7 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           STORE_FILE: ${{ secrets.STORE_FILE }}
-        run:
+        run: |
           echo STORE_PASSWORD= $STORE_PASSWORD >> local.properties
           echo KEY_PASSWORD= $KEY_PASSWORD >> local.properties
           echo KEY_ALIAS= $KEY_ALIAS >> local.properties
