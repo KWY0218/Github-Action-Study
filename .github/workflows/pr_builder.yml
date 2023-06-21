@@ -2,7 +2,7 @@ name: Test PR Builder
 
 on:
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "develop-copy" ]
 
 jobs:
   build:
