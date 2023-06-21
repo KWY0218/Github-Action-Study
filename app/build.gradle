@@ -8,15 +8,6 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 android {
     compileSdk 32
 
-    signingConfigs {
-        release {
-            storeFile file(properties["STORE_FILE"])
-            keyAlias properties["KEY_ALIAS"]
-            keyPassword properties["KEY_PASSWORD"]
-            storePassword properties["STORE_PASSWORD"]
-        }
-    }
-
     defaultConfig {
         applicationId "com.sopt.cilap"
         minSdk 26
@@ -31,7 +22,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
     compileOptions {

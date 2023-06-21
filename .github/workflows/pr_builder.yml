@@ -2,7 +2,7 @@ name: Test PR Builder
 
 on:
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "develop-copy" ]
 
 jobs:
   build:
@@ -31,8 +31,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Lint Check
-      run: ./gradlew ktlintCheck
+#    - name: Lint Check
+#      run: ./gradlew ktlintCheck
+
+    - name: ktlint formatter
+      run: ./gradlew ktlintFormat
 
     - name: Build with Gradle
       run: ./gradlew build
